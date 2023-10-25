@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+    <form action="/history" method="post">
+        <div class="mb-3">
+            <input class="text" class="form-control mx-auto w-auto" name="username" autocomplete="off" autofocus placeholder="Username">
+        </div>
+        <div class="mb-3">
+            <button class="btn-primary" type="Submit" value="Load">
+        </div>
+
+{% endblock %}

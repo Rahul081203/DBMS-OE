@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table border="5" cell-padding="10" width="100%">
+        <tr>
+            <th>Transaction</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Date/time</th>
+        </tr>
+        {% for record in records %}
+            <tr>
+                <td>{{record['type']}}</td>
+                <td>{{record['symbol']}}</td>
+                <td>{{record['price']}}</td>
+                <td>{{record['quantity']}}</td>
+                <td>{{record['Transaction_Date_time']}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

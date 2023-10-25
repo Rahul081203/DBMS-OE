@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BUY STOCKS
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <input type="text" autocomplete="off" autofocus name="symbol" placeholder="Symbol" class="form-control mx-auto w-auto">
+            <input type="text" autocomplete="off" autofocus name="shares" placeholder="Shares" class="form-control mx-auto w-auto">
+        </div>
+        <div class="mb-3">
+            <input type="text" autocomplete="off" autofocus name="username" placeholder="Username" class="form-control mx-auto w-auto">
+            <input type="password" autocomplete="off" autofocus name="password" placeholder="Password" class="form-control mx-auto w-auto">
+        </div>
+        <div class="mb-3">
+            <button type="submit" name="Buy" class="btn btn-primary">
+        </div>
+    </form>
+{% endblock %}

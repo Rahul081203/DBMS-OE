@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stocks
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+            <input type="text" name="symbol" placeholder="Symbol" autocomplete="off" autofocus class ="form-control mx-auto w-auto">
+            <input type="text" name="shares" placeholder="Shares" autocomplete="off" autofocus class="form-control mx-auto w-auto">
+        <div class="mb-3">
+            <input type="text" name="username" placeholder="Username" autocomplete="off" autofocus class="form-control mx-auto w-auto">
+            <input type="text" name="password" placeholder="Password" autocomplete="off" autofocus class="form-control mx-auto w-auto">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">
+        </div>
+    </form>
+{% endblock %}

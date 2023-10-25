@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table border="5" cell-padding="10" width="100%">
+        <tr>
+            <th>Symbol</th>
+            <th>Rate</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        {% for record in records %}
+            <tr>
+                <td>{{record['symbol']}}</td>
+                <td>${{record['current_price']}}</td>
+                <td>{{record['shares']}}</td>
+                <td>${{record['current_price']*record['shares']}}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td> <td>
+            <td>TOTAL CASH: </td>
+            <td>{% for record in records %}
+                    ${{record['cash']}}
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td>Total Value (Cash + Holdings):</td>
+            <td>{% for record in records %}
+                ${{record['cash']+(record['current_price']*record['shares'])}}
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}
